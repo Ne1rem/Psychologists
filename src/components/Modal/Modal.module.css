@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-family: 'Manrope';
+  font-family: 'Inter';
   position: relative;
   width: 541px;
   /* height: 752px; */
@@ -96,7 +96,7 @@
 
 .description {
   display: block;
-  font-family: 'Manrope';
+  font-family: 'Inter';
   width: 461px;
   font-size: 14px;
   line-height: 20px;
@@ -170,7 +170,7 @@
 }
 
 [id='manrope'] {
-  font-family: 'Manrope';
+  font-family: 'Inter';
   font-size: 12px;
   line-height: 18px;
   font-weight: 400;
@@ -181,7 +181,7 @@
   color: white;
 }
 .rentalCarBtn {
-  font-family: 'Manrope';
+  font-family: 'Inter';
   width: 168px;
   height: 44px;
   background-color: rgba(52, 112, 255, 1);

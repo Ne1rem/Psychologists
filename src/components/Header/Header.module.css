@@ -7,34 +7,43 @@
 }
 
 .header {
+  position: fixed;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  width: 100%;
+  justify-content: space-between;
+  max-width: 100%;
   height: 70px;
   box-sizing: border-box;
   color: rgb(253, 253, 253);
-  position: fixed;
-  z-index: 99999;
+}
+
+.headerPart {
+  display: flex;
+  justify-content: space-between;
+  max-width: 536px;
 }
 
 .logoLink {
   text-decoration: none;
+  margin-right: 130px;
 }
 
-.header h1 {
-  font-family: 'Manrope';
-  font-size: 26px;
-  line-height: 32px;
-  margin-right: 723px;
-  z-index: 99999;
-  font-family: 'Manrope';
+.logoLink h1 {
+  color: #191a15;
+  font-size: 20px;
+  line-height: 24px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 1);
+  letter-spacing: -0.02em;
+  font-family: 'Inter';
+}
+
+.logoLink h1 span {
+  color: #3470ff;
+  font-weight: 600;
 }
 
 .link h2 {
-  font-family: 'Manrope';
+  font-family: 'Inter';
   font-weight: 500;
   color: rgba(255, 255, 255, 1);
 }
@@ -42,8 +51,21 @@
 .navlinks {
   display: flex;
   align-items: center;
-  justify-content: center;
-  z-index: 9999999;
+  gap: 40px;
+  margin-right: auto;
+}
+
+.navlinks a {
+  text-decoration: none;
+}
+
+.navlinksH2 {
+  color: #191a15;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  text-align: left;
 }
 
 .link {
@@ -51,5 +73,34 @@
   font-size: 12px;
   line-height: 26px;
   margin-right: 40px;
-  z-index: 9999999;
+}
+
+.HeaderButtonsPart {
+  padding-left: 345px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.HeaderButtonsPartLogIn {
+  width: 124px;
+  height: 48px;
+  padding: 14px, 39px, 14px, 39px;
+  border-radius: 30px;
+  border: 1px solid rgba(25, 26, 21, 0.2);
+
+  gap: 8px;
+  color: #191a15;
+  background-color: transparent;
+}
+
+.HeaderButtonsPartRegistration {
+  width: 171px;
+  height: 48px;
+  padding: 14px, 40px, 14px, 40px;
+  border-radius: 30px;
+  border: 0px;
+  gap: 8px;
+  color : #fff;
+  background-color: rgba(52, 112, 255, 1);
 }

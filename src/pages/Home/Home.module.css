@@ -22,7 +22,7 @@
   position: relative;
   width: 1200px;
 text-align: center;
-  font-family: 'Manrope';
+  font-family: 'Inter';
   font-size: 32px;
   line-height: 36px;
   font-weight: 500;
@@ -54,7 +54,7 @@ text-align: center;
 }
 
 .rentalCarBtn {
-  font-family: 'Manrope';
+  font-family: 'Inter';
   width: 168px;
   height: 44px;
   background-color: rgba(52, 112, 255, 1);
@@ -86,7 +86,7 @@ text-align: center;
 }
 
 .toCatalogBtn {
-  font-family: 'Manrope';
+  font-family: 'Inter';
   width: 168px;
   height: 44px;
   background-color: rgba(11, 68, 205, 0.9);
@@ -114,7 +114,7 @@ text-align: center;
   margin-top: 600px;
   margin-left: auto;
   margin-right: auto;
-  font-family: 'Manrope';
+  font-family: 'Inter';
   font-size: 32px;
   line-height: 36px;
   font-weight: 500;

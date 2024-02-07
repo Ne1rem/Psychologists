@@ -1,7 +1,7 @@
 .background {
   height: 70px;
   width: 100%;
-  background-color: rgba(52, 112, 255, 1);
+  border-bottom: ridge rgba(25, 26, 21, 0.1);
   margin-bottom: 30px;
   position: fixed;
   z-index: 999999;
