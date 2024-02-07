@@ -4,7 +4,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const currentPath = useLocation().pathname;
-  const isLoggedIn = true;
+  const isLoggedIn = false;
 
   return (
     <div className={css.container}>

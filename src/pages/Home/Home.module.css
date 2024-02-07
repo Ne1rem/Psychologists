@@ -1,237 +1,112 @@
-.hero {
-  width: 100vw;
-  position: absolute;
-  left: 0;
-  top: 70px;
-}
-
-.imagesDiv {
-  position: relative;
-  width: 100%;
-}
-
-.heroImage {
-  position: absolute;
-
-  width: 100%;
-
-  transition: all 3s ease-in-out;
-}
-
-.info {
-  position: relative;
-  width: 1200px;
-text-align: center;
-  font-family: 'Inter';
-  font-size: 32px;
-  line-height: 36px;
-  font-weight: 500;
-  color: rgb(93, 120, 184);
-}
-
-.info h1 {
-  margin-bottom: 10px;
-}
-
-.info h2 {
-  margin-bottom: 30px;
-  font-size: 26px;
-}
-
-.text {
-  position: absolute;
-  color: rgb(93, 120, 184);
-  font-size: 30px;
-  transition: all 3s ease-in-out;
-}
-
-.buttons {
-  position: absolute;
-  top: 300px;
-  right: 150px;
+.home {
   display: flex;
-  align-items: center;
 }
 
-.rentalCarBtn {
-  font-family: 'Inter';
-  width: 168px;
-  height: 44px;
-  background-color: rgba(52, 112, 255, 1);
-  border: 0px;
-  border-radius: 12px;
-  color: white;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 600;
-  box-sizing: border-box;
-  padding: 0;
-  margin-right: 30px;
-}
-
-.rentalCarBtn:hover {
-  background-color: rgba(11, 68, 205, 1);
-}
-
-.rentalCarBtn:active {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px;
-}
-
-.toCatalogLink {
-  color: white;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.toCatalogBtn {
-  font-family: 'Inter';
-  width: 168px;
-  height: 44px;
-  background-color: rgba(11, 68, 205, 0.9);
-  border: 2px solid rgba(52, 112, 255, 1);
-  border-radius: 12px;
-  color: white;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 600;
-  box-sizing: border-box;
-  padding: 0;
-}
-
-.toCatalogBtn:hover {
-  background-color: rgba(52, 112, 255, 1);
-}
-
-.toCatalogBtn:active {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px;
-  background-color: rgba(11, 68, 205, 1);
-}
-.heroBest{
-  position: relative;
-  width: 1200px;
-  margin-top: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: 'Inter';
-  font-size: 32px;
-  line-height: 36px;
-  font-weight: 500;
-  margin-bottom: 30px;
-  color: rgba(11, 68, 205, 1);
-}
-.HomeimageWrappers {
-  position: relative;
-  width: 274px;
-  height: 268px;
-  margin-bottom: 14px;
-}
-.homeCard{
-  list-style: none;
-}
-.HomecarImage {
-  width: 750px;
-  height: 525px;
-  border-radius: 14px;
-  object-fit: cover;
-}
-
-.HomeaddFavorite {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 18px;
-  height: 18px;
-}
-
-.Hometitle {
-  justify-content: space-between;
-  font-size: 35px;
+.homeTextPart {
   display: flex;
   flex-direction: column;
-  font-weight: 500;
-  padding-right: 9px;
-  color: rgba(18, 20, 23, 1);
-  margin-bottom: 15px;
-}
-
-.Homemodel {
-  margin-left: 3px;
-  color: rgba(52, 112, 255, 1);
-}
-
-.Homeyear {
-  margin-left: 3px; 
-  display: flex;
-  flex-direction: column;
+  width: 595px;
+  height: 338px;
   gap: 20px;
+  padding-top: 126px;
+  padding-right: 125px;
 }
 
-.Homeprice {
-  display: inline;
-
-}
-.homeCardList {
-  position: relative;
-  list-style-type: none;
-}
-
-.homeCard {
-  position: absolute;
-  transition: opacity 1s ease-in-out;
-}
-.Hometags {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 270px;
-  height: 40px;
-  font-size: 12px;
-  line-height: 1.Home5;
-  font-weight: 400;
-  margin-bottom: 28px;
-}
-
-.Hometags p {
-  line-height: 18px;
-  font-size: 12px;
-  font-weight: 400;
-  color: rgba(18, 20, 23, 0.Home5);
-}
-
-.Hometags span {
-  color: rgba(18, 20, 23, 0.Home1);
-  line-height: 16px;
-  font-size: 16px;
+.homeh1 {
+  font-family: Inter;
+  font-size: 80px;
   font-weight: 600;
+  line-height: 82px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  span {
+    color: rgba(52, 112, 255, 1);
+  }
 }
-.HomeDivText{
+
+.homeP {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  width: 510px;
+  height: 72px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+.homeButtonGetStarted {
+  width: 235.83px;
+  height: 60px;
+  padding: 18px 41px;
+  border-radius: 30px;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  text-align: center;
+  border: none;
+  background-color: rgba(52, 112, 255, 1);
+  color: white;
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  svg {
+    padding-left: 18px;
+    width: 18px;
+    height: 18px;
+    fill: white;
+  }
 }
-.divClassText{
+
+.mountOfPsycologists {
+  position: absolute;
+  right: 622px;
+  top: 511px;
+  padding: 32px;
+  display: flex;
+  border-radius: 20px;
+  background-color: rgba(52, 112, 255, 1);
+  svg {
+    fill: rgba(52, 112, 255, 1);
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 13px;
+    padding: 12px;
+  }
+}
+
+.imageHomeDiv {
+  padding-top: 78px;
+}
+
+.mountOfPsycologistsText {
+  gap: 8px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding-left: 16px;
 }
-.HomelearnMoreBtn {
-  width: 100%;
-  height: 44px;
-  background-color: rgba(52, 112, 255, 1);
-  border: 0px;
-  border-radius: 12px;
-  color: white;
+
+.mountOfPsycologistsTextT1 {
+  font-family: Inter;
   font-size: 14px;
-  line-height: 20px;
-  font-weight: 600;
-  outline: none;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(251, 251, 251, 0.5);
 }
 
-.HomelearnMoreBtn:hover {
-  background-color: rgba(11, 68, 205, 1);
-  border: 0px;
-}
-
-.HomelearnMoreBtn:active {
-  box-shadow: rgba(0, 0, 0, 0.Home1) 0px 5px 10px;
+.mountOfPsycologistsTextT2 {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(251, 251, 251, 1);
 }
