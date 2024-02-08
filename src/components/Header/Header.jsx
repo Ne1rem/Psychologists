@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import css from './Header.module.css';
 import { NavLink, useLocation } from 'react-router-dom';
+import LogIn from 'Auth/LogIn/LogIn';
+import Registration from 'Auth/Registartion/Registration';
 
 const Header = () => {
+  const [isLogInOpen, setIsLogInOpen] = useState(false);
+  const [isRegistrationOpen, setisRegistrationOpen] = useState(false);
+
   const currentPath = useLocation().pathname;
   const isLoggedIn = false;
 
@@ -40,8 +45,24 @@ const Header = () => {
           <h1>logged in</h1>
         ) : (
           <div className={css.HeaderButtonsPart}>
-            <button className={css.HeaderButtonsPartLogIn}>Log in</button>
-            <button className={css.HeaderButtonsPartRegistration}>Registration</button>
+            <button
+              className={css.HeaderButtonsPartLogIn}
+              onClick={() => {
+                setIsLogInOpen(true);
+              }}
+            >
+              Log in
+            </button>
+            {isLogInOpen && <LogIn setIsLogInOpen={setIsLogInOpen} />}
+            <button
+              className={css.HeaderButtonsPartRegistration}
+              onClick={() => {
+                setisRegistrationOpen(true);
+              }}
+            >
+              Registration
+            </button>
+            {isRegistrationOpen && <Registration setIsLogInOpen={setIsLogInOpen} />}
           </div>
         )}
       </div>

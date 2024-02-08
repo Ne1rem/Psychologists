@@ -20,11 +20,7 @@ const Home = () => {
             <use href={`${Svg}#icon-Arrow-16`} />
           </svg>
         </button>
-      </div>
-      <div className={css.imageHomeDiv}>
-        <img src={Image} alt="Psychologists" />
-      </div>
-      <div className={css.mountOfPsycologists}>
+        <div className={css.mountOfPsycologists}>
         <svg>
           <use href={`${Svg}#icon-fe_check-converted`} />
         </svg>
@@ -32,6 +28,10 @@ const Home = () => {
           <p className={css.mountOfPsycologistsTextT1}>Experienced psychologists</p>
           <p className={css.mountOfPsycologistsTextT2}>15,000</p>
         </div>
+      </div>
+      </div>
+      <div className={css.imageHomeDiv}>
+        <img src={Image} alt="Psychologists" />
       </div>
     </div>
   );

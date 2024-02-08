@@ -10,6 +10,7 @@
   gap: 20px;
   padding-top: 126px;
   padding-right: 125px;
+  z-index: auto;
 }
 
 .homeh1 {
@@ -62,13 +63,15 @@
 }
 
 .mountOfPsycologists {
-  position: absolute;
-  right: 622px;
-  top: 511px;
-  padding: 32px;
-  display: flex;
-  border-radius: 20px;
+  align-items: center;
   background-color: rgba(52, 112, 255, 1);
+  border-radius: 20px;
+  display: flex;
+  gap: 16px;
+  padding: 32px;
+  position: absolute;
+  right: 250px;
+  top: 510px;
   svg {
     fill: rgba(52, 112, 255, 1);
     background-color: white;
@@ -83,12 +86,17 @@
   padding-top: 78px;
 }
 
+
 .mountOfPsycologistsText {
   gap: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 16px;
+  align-self: center;
+  width: 177px;
+height: 54px;
+
 }
 
 .mountOfPsycologistsTextT1 {
