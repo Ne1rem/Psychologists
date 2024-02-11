@@ -1,72 +1,60 @@
 import React, { useState } from 'react';
-import css from './Header.module.css';
-import { NavLink, useLocation } from 'react-router-dom';
-import LogIn from 'Auth/LogIn/LogIn';
-import Registration from 'Auth/Registartion/Registration';
+
+import { Container } from '../Container.styled';
+import Navigation from '../Navigation/Navigation';
+import { ButtonLog, ButtonReg, HeaderContainer, HeaderWrap, Logo, LogoDotSpan, LogoSpan, UserMenu } from './Header.styled';
+import { ModalPortal } from '../ModalPortal/ModalPortal';
+import PopUpRegistration from '../PopUpRegistration/PopUpRegistration';
+import PopUpLogIn from '../PopUpLogIn/PopUpLogin';
+import { useAuth } from '../../helpers/hooks/useAuth';
+import { useDispatch } from 'react-redux';
+import { removeUser } from '../../redux/auth/userSlice';
 
 const Header = () => {
-  const [isLogInOpen, setIsLogInOpen] = useState(false);
-  const [isRegistrationOpen, setisRegistrationOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [title, setIsTitle] = useState('Registration');
+  const { isAuth } = useAuth();
+  const dispatch = useDispatch();
 
-  const currentPath = useLocation().pathname;
-  const isLoggedIn = false;
+  const toggleModal = () => {
+    setIsOpen(isOpen => !isOpen);
+  };
+
+  const onClickBtn = title => {
+    setIsTitle(title);
+    toggleModal();
+  };
 
   return (
-    <div className={css.container}>
-      <div className={css.header}>
-        <div className={css.headerPart}>
-          <NavLink to="/" className={css.logoLink}>
-            <h1 className={css.logoLinkh1}>
-              <span>psychologists.</span>services
-            </h1>
-          </NavLink>
+    <HeaderWrap>
+      <Container>
+        <HeaderContainer>
+        <Logo>
+          <LogoSpan>psychologists</LogoSpan>
+          <LogoDotSpan>.</LogoDotSpan>services
+        </Logo>
+        <Navigation />
+        { isAuth ? 
+          <UserMenu>
+            <ButtonLog type="button" onClick={() => onClickBtn('Log In')}>Log In</ButtonLog>
+            <ButtonReg type="button" onClick={() => onClickBtn('Registration')}>Registration</ButtonReg>
+          </UserMenu> :
+            <ButtonLog type="button" onClick={() => dispatch(removeUser())}>Log Out</ButtonLog>
+        }
 
-          <div className={css.navlinks}>
-            <NavLink to="/" className={currentPath === '/' ? 'active' : ''}>
-              <h2 className={css.navlinksH2}>Home</h2>
-            </NavLink>
-            <NavLink
-              to="/psychologists"
-              className={currentPath === '/psychologists' ? 'active' : ''}
-            >
-              <h2 className={css.navlinksH2}>Psychologists</h2>
-            </NavLink>
-            {isLoggedIn ? (
-              <NavLink
-                to="/Favorites"
-                className={currentPath === '/favorites' ? 'active' : ''}
-              >
-                <h2 className={css.navlinksH2}>Favorites</h2>
-              </NavLink>
-            ) : null}
-          </div>
-        </div>
-        {isLoggedIn ? (
-          <h1>logged in</h1>
-        ) : (
-          <div className={css.HeaderButtonsPart}>
-            <button
-              className={css.HeaderButtonsPartLogIn}
-              onClick={() => {
-                setIsLogInOpen(true);
-              }}
-            >
-              Log in
-            </button>
-            {isLogInOpen && <LogIn setIsLogInOpen={setIsLogInOpen} />}
-            <button
-              className={css.HeaderButtonsPartRegistration}
-              onClick={() => {
-                setisRegistrationOpen(true);
-              }}
-            >
-              Registration
-            </button>
-            {isRegistrationOpen && <Registration setIsLogInOpen={setIsLogInOpen} />}
-          </div>
-        )}
-      </div>
-    </div>
+        {isOpen && (
+        <ModalPortal title={title} onClose={toggleModal}>
+          {title === 'Log In' ? (
+            <PopUpLogIn onClose={toggleModal}/>
+          ) : (
+            <PopUpRegistration onClose={toggleModal}/>
+          )}
+
+        </ModalPortal>
+      )}
+        </HeaderContainer>
+      </Container>
+    </HeaderWrap>
   );
 };
 
