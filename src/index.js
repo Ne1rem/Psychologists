@@ -12,7 +12,7 @@ import './firebase'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/psychologists-services">
+    <BrowserRouter basename="/psychologists">
       <Provider store={store}>
       <GlobalStyle />
          <App/>

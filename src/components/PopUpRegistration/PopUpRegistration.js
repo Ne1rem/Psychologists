@@ -1,5 +1,5 @@
 import { ErrorMessage, Form, Formik } from 'formik';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+// import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import icons from '../../img/icons.svg';
 import * as Yup from 'yup';
 import {
@@ -13,7 +13,7 @@ import {
 } from './PopUpRegistration.styled';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setUser } from '../../redux/auth/userSlice';
+// import { setUser } from '../../redux/auth/userSlice';
 
 export const validateSchema = Yup.object().shape({
   name: Yup.string().required('Required'),
@@ -37,25 +37,25 @@ const PopUpRegistration = ({ onClose }) => {
   
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = async values => {
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, values.email, values.password)
-        .then(({user}) => {
-            console.log(user)
-            dispatch(setUser({
-                email: user.email,
-                token: user.accessToken,
-                id: user.uid,
-            }))
-        })
-        .catch(console.error);
-    onClose();
-  };
-  const togglePasswordVisibility = field => {
-    if (field === 'password') {
-      setShowPassword(!showPassword);
-    }
-  };
+  // const handleSubmit = async values => {
+  //   const auth = getAuth();
+  //   createUserWithEmailAndPassword(auth, values.email, values.password)
+  //       .then(({user}) => {
+  //           console.log(user)
+  //           dispatch(setUser({
+  //               email: user.email,
+  //               token: user.accessToken,
+  //               id: user.uid,
+  //           }))
+  //       })
+  //       .catch(console.error);
+  //   onClose();
+  // };
+  // const togglePasswordVisibility = field => {
+  //   if (field === 'password') {
+  //     setShowPassword(!showPassword);
+  //   }
+  // };
 
   return (
     <div>
@@ -66,7 +66,7 @@ const PopUpRegistration = ({ onClose }) => {
       <Formik
         initialValues={initialValues}
         validationSchema={validateSchema}
-        onSubmit={handleSubmit}
+        // onSubmit={handleSubmit}
       >
         {({ isSubmitting, errors, touched, values }) => (
           <Form>
@@ -107,7 +107,7 @@ const PopUpRegistration = ({ onClose }) => {
                 <SvgStyled
                   height="16"
                   width="16"
-                  onClick={() => togglePasswordVisibility('password')}
+                  // onClick={() => togglePasswordVisibility('password')}
                 >
                   <use
                     href={`${icons}#${

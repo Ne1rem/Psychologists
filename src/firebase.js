@@ -1,12 +1,12 @@
 // import { initializeApp } from "firebase/app";
 
 // const firebaseConfig = {
-//   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-//   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-//   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-//   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-//   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-//   appId: process.env.REACT_APP_FIREBASE_API_ID
+//     apiKey: "AIzaSyBCeS_XYInrZkAV4gtKQ9cbM6oPuS5-fyc",
+//     authDomain: "psychologists-services-607b5.firebaseapp.com",
+//     projectId: "psychologists-services-607b5",
+//     storageBucket: "psychologists-services-607b5.appspot.com",
+//     messagingSenderId: "978722823419",
+//     appId: "1:978722823419:web:8c9736d2d2d16dbc41245e" 
 // };
 
 // export const app = initializeApp(firebaseConfig);
