@@ -4,15 +4,15 @@
   /* colors */
   --black-color: #191A15;
   --black-light-color:#8A8A89;
-  --green-color: #54BE96;
-  --green-light-color: #rgba(84, 190, 150, 0.20);
+  --green-color: #3470FF;
+  --green-light-color: #3470FF33;
   --white-color: #FBFBFB;
 
   /* accent colors */
   --normal-color: rgba(25, 26, 21, 0.50);
-  --hover-color: #36A379;
-  --success-color: #38CD3E;
-  --error-color: #d80027;
+  --hover-color: #255EE8;
+  --success-color: green;
+  --error-color: red;
 
   /* font-size */
   --small: 14px;
