@@ -1,9 +1,10 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Layout from './Layout';
-import HomePage from 'pages/HomePage';
-import Psychologists from 'pages/Psychologists';
-import Favorites from 'pages/Favorites';
+import { lazy } from 'react';
 
+const HomePage = lazy(() => import("../pages/HomePage"))
+const Psychologists = lazy(() => import("../pages/Psychologists"))
+const Favorites = lazy(() => import("../pages/Favorites"))
 
 const App = () => {
   return (

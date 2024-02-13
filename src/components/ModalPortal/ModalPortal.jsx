@@ -9,7 +9,7 @@ import {
   SvgClose,
 } from './ModalPortal.styled';
 
-const modalRoot = document.querySelector('#modal-root');
+const modalRoot = document.querySelector('#root');
 
 export const ModalPortal = ({ title, children, onClose }) => {
   useEffect(() => {

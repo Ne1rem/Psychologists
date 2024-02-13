@@ -1,12 +1,17 @@
-// import { initializeApp } from "firebase/app";
+import { getDatabase,ref } from 'firebase/database';
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
 
-// const firebaseConfig = {
-//     apiKey: "AIzaSyBCeS_XYInrZkAV4gtKQ9cbM6oPuS5-fyc",
-//     authDomain: "psychologists-services-607b5.firebaseapp.com",
-//     projectId: "psychologists-services-607b5",
-//     storageBucket: "psychologists-services-607b5.appspot.com",
-//     messagingSenderId: "978722823419",
-//     appId: "1:978722823419:web:8c9736d2d2d16dbc41245e" 
-// };
+const firebaseConfig = {
+    apiKey: "AIzaSyA4SSYS6EVg8wWpcMAUixCwPdcis2yjfKc",
+    authDomain: "psychologists-8a8db.firebaseapp.com",
+    projectId: "psychologists-8a8db",
+    storageBucket: "psychologists-8a8db.appspot.com",
+    messagingSenderId: "769656068762",
+    appId: "1:769656068762:web:d6607f0362c9c72ee71d23"
+  };
 
-// export const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
+export const database = ref(getDatabase(app));
+export const auth = getAuth(app);
+ 
