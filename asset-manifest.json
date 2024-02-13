@@ -1,15 +1,25 @@
 {
   "files": {
-    "main.css": "/psychologists/static/css/main.f6504c59.css",
-    "main.js": "/psychologists/static/js/main.d9ad3cb4.js",
-    "static/media/homePageImage.jpg": "/psychologists/static/media/homePageImage.040407323eb5f15f2566.jpg",
-    "static/media/svg.svg": "/psychologists/static/media/svg.2e193250e21aa0f52a0af9164e507cba.svg",
+    "main.css": "/psychologists/static/css/main.b02a8523.css",
+    "main.js": "/psychologists/static/js/main.6163c952.js",
+    "static/js/550.73717937.chunk.js": "/psychologists/static/js/550.73717937.chunk.js",
+    "static/js/405.3b05d300.chunk.js": "/psychologists/static/js/405.3b05d300.chunk.js",
+    "static/js/395.ca3787b3.chunk.js": "/psychologists/static/js/395.ca3787b3.chunk.js",
+    "static/media/Inter-Bold.ttf": "/psychologists/static/media/Inter-Bold.0eaf807b1cf0eceabe0f.ttf",
+    "static/media/Inter-SemiBold.ttf": "/psychologists/static/media/Inter-SemiBold.6058d3da655fb35169c2.ttf",
+    "static/media/Inter-Medium.ttf": "/psychologists/static/media/Inter-Medium.3f7acfe50aad7ad68548.ttf",
+    "static/media/Inter-Regular.ttf": "/psychologists/static/media/Inter-Regular.9ca9ba81e9dcaa12b3a1.ttf",
+    "static/media/main_img.jpg": "/psychologists/static/media/main_img.2a32df9e958cb310e000.jpg",
+    "static/media/icons.svg": "/psychologists/static/media/icons.097174130844282b536a9c167c63806c.svg",
     "index.html": "/psychologists/index.html",
-    "main.f6504c59.css.map": "/psychologists/static/css/main.f6504c59.css.map",
-    "main.d9ad3cb4.js.map": "/psychologists/static/js/main.d9ad3cb4.js.map"
+    "main.b02a8523.css.map": "/psychologists/static/css/main.b02a8523.css.map",
+    "main.6163c952.js.map": "/psychologists/static/js/main.6163c952.js.map",
+    "550.73717937.chunk.js.map": "/psychologists/static/js/550.73717937.chunk.js.map",
+    "405.3b05d300.chunk.js.map": "/psychologists/static/js/405.3b05d300.chunk.js.map",
+    "395.ca3787b3.chunk.js.map": "/psychologists/static/js/395.ca3787b3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f6504c59.css",
-    "static/js/main.d9ad3cb4.js"
+    "static/css/main.b02a8523.css",
+    "static/js/main.6163c952.js"
   ]
 }
