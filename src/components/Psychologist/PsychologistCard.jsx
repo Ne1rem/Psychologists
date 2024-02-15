@@ -17,49 +17,8 @@ import {
   SvgStar,
 } from './PsychologistCard.styled';
 import icons from '../../img/icons.svg';
-import { createContext, useContext, useEffect, useState } from 'react';
-import { onValue } from 'firebase/database';
-import { database } from '../../firebase.js';
 
 const PsychologistCard = () => {
-  const filter = useContext(createContext(null));
-
-  const [ psychologists, setPsychologists] = useState([ ])
-  
-  useEffect(() => {
-    if (!filter) return;
-
-    if (filter.firstFilter) {
-      onValue(database, snapshot => {
-        let list;
-        if (filter.filter === 'price_per_hour') {
-          list = snapshot
-            .val()
-            .filter(item => item[filter.filter] <= filter.value);
-        } else {
-          list = snapshot
-            .val()
-            .filter(item => item[filter.filter].includes(filter.value));
-        }
-        setPsychologists(list);
-        console.log(list)
-      });
-    } 
-  }, 
-  [filter]);
-  
-  
-  useEffect(()=>{
-       onValue(database, (snapshot)=>{
-          const currentData = snapshot.val();
-          
-          setPsychologists(currentData)
-
-      })
-  } ,[ ])
-
-  console.log(psychologists);
-
   return (
     <PsycWrap>
       <AvatarWrap></AvatarWrap>

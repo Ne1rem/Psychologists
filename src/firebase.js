@@ -5,7 +5,7 @@ import { getAuth } from 'firebase/auth';
 const firebaseConfig = {
   apiKey: "AIzaSyA4SSYS6EVg8wWpcMAUixCwPdcis2yjfKc",
   authDomain: "psychologists-8a8db.firebaseapp.com",
-  databaseURL: "https://psychologists-8a8db-default-rtdb.europe-west1.firebasedatabase.app",
+  databaseURL: "https://psychologists-8a8db-default-rtdb.europe-west1.firebasedatabase.app/",
   projectId: "psychologists-8a8db",
   storageBucket: "psychologists-8a8db.appspot.com",
   messagingSenderId: "769656068762",
