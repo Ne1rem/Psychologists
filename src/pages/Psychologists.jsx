@@ -44,7 +44,6 @@ const Psychologists = () => {
     });
   }, []);
 
-  console.log(psychologists);
   return (
     <Container>
       <PsychologistCard psychologists={psychologists}/>

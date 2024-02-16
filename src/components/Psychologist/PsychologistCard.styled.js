@@ -4,12 +4,13 @@ export const PsycWrap = styled.div`
     border-radius: 24px;
     background: rgb(255, 255, 255);
     display: flex;
+    flex-direction: column;
     gap: 24px;
     padding: 24px;
     width: 100%;
 `
 
-export const AvatarWrap = styled.div`
+export const AvatarWrap = styled.img`
     width: 120px;
     height: 120px;
     border: 2px solid rgba(84, 190, 150, 0.2);
