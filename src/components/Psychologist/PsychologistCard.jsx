@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import {
+  AvatarWrap,
   DescriptionText,
   DescriptionWrap,
+  DivCardPsy,
   HeadDescriptionWrap,
   PsyText,
   PsycWrap,
@@ -13,6 +15,7 @@ import {
   SkillsBlockText,
   SkillsSpan,
   SvgHeart,
+  SvgImageAvatar,
   SvgStar,
 } from './PsychologistCard.styled';
 import icons from '../../img/icons.svg';
@@ -27,18 +30,15 @@ const PsychologistCard = ({ psychologists }) => {
   return (
     <PsycWrap>
       {psychologists.slice(0, loadMoreCount).map(psychologist => (
-        <div key={psychologist.id}>
-          <img src={psychologist.avatar_url} alt="" />
-          <svg
-            width="30"
-            height="20"
+        <DivCardPsy key={psychologist.id}>
+          <SvgImageAvatar
             viewBox="0 0 14 14"
-            fill="#38CD3E"
             xmlns="http://www.w3.org/2000/svg"
           >
             <circle cx="7" cy="7" r="7" fill="#FBFBFB" />
             <circle cx="7.00065" cy="7.00009" r="4.66667" fillRule="#38CD3E" />
-          </svg>
+          </SvgImageAvatar>
+          <AvatarWrap src={psychologist.avatar_url} alt="avatar psycologist" />
           <DescriptionWrap>
             <HeadDescriptionWrap>
               <PsyText>Psychologist</PsyText>
@@ -79,7 +79,7 @@ const PsychologistCard = ({ psychologists }) => {
             <DescriptionText>{psychologist.about}</DescriptionText>
             <button type="button">Read more</button>
           </DescriptionWrap>
-        </div>
+        </DivCardPsy>
       ))}
       <button type="button" onClick={loadMore}>
         Load more

@@ -1,14 +1,17 @@
 import styled from "styled-components";
 
 export const PsycWrap = styled.div`
-    border-radius: 24px;
-    background: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     gap: 24px;
+`
+export const DivCardPsy = styled.div`
+    border-radius: 24px;
+    background: rgb(255, 255, 255);
     padding: 24px;
     width: 100%;
-`
+    display: flex;
+    `
 
 export const AvatarWrap = styled.img`
     width: 120px;
@@ -17,9 +20,18 @@ export const AvatarWrap = styled.img`
     border-radius: 30px;
     padding: 12px;
 `
+export const SvgImageAvatar = styled.svg`
+  width: 14px;
+  height: 14px;
+  fill: #38CD3E;
+  position: relative;
+  top: 33px;
+  left: 92px;
+`;
 
 export const DescriptionWrap = styled.div`
     width: 100%;
+    padding-left: 24px;
 `
 export const HeadDescriptionWrap = styled.div`
     display: flex;
