@@ -27,6 +27,7 @@ export const LogoDotSpan = styled.span`
     color: var(--green-color);
     font-weight: 500;
 `
+
 export const ButtonLog = styled.button`
     display: flex;
     padding: 14px 39px;

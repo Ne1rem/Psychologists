@@ -25,8 +25,8 @@ export const SvgImageAvatar = styled.svg`
   height: 14px;
   fill: #38CD3E;
   position: relative;
-  top: 33px;
-  left: 92px;
+  top: 9px;
+  left: 104px;
 `;
 
 export const DescriptionWrap = styled.div`
@@ -132,4 +132,72 @@ export const ReadMoreButton = styled.button`
     line-height: 1.5;
     text-decoration: underline;
 
+`
+
+export const ButtonReadMore = styled.button`
+font-family: Inter;
+font-size: 16px;
+font-weight: 500;
+letter-spacing: 0em;
+text-align: left;
+text-decoration: underline;
+`
+
+export const AvatarReviewIcon = styled.p`
+background: rgba(52, 112, 255, 0.2);
+color: (var(--green-color));
+font-family: Inter;
+font-size: 20px;
+font-weight: 500;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+border-radius: 100px;
+height: 44px;
+width: 44px;
+align-items: center;
+justify-content: center;
+display: flex;
+margin-right: 12px;
+`
+export const ReviewDiv = styled.div`
+display: flex;
+margin-top: 28px;
+align-items: center;
+`
+export const ReviewDivPName = styled.p`
+color: rgba(25, 26, 21, 1);
+font-family: Inter;
+font-size: 16px;
+font-weight: 500;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+`
+export const ReviewDivPPartStar = styled.p`
+display: flex;
+align-items: center;
+`
+export const ReviewCommentText = styled.p`
+color: rgba(25, 26, 21, 0.5);
+font-family: Inter;
+font-size: 16px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0em;
+text-align: left;
+padding-top: 16px;
+`
+export const UlReview = styled.ul`
+padding-bottom: 40px;
+`
+
+export const ButtonMakeAppoint = styled.button`
+border-radius: 30px;
+background: rgba(52, 112, 255, 1);
+color: #fff;
+font-weight: 500;
+line-height: 20px;
+letter-spacing: -0.01em;
+padding: 14px 32px;
 `
