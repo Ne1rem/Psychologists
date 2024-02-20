@@ -27,10 +27,12 @@ import {
   UlReview,
 } from './PsychologistCard.styled';
 import icons from '../../img/icons.svg';
+import ModalAppointment from 'components/ModalAppointment/ModalAppointment';
 
 const PsychologistCard = ({ psychologists }) => {
   const [loadMoreCount, setLoadMoreCount] = useState(3);
   const [expandedId, setExpandedId] = useState(null);
+  const [selectedPsychologist, setSelectedPsychologist] = useState(null);
 
   const handleReadMore = id => {
     setExpandedId(id === expandedId ? null : id);
@@ -38,6 +40,10 @@ const PsychologistCard = ({ psychologists }) => {
 
   const loadMore = () => {
     setLoadMoreCount(prevCount => prevCount + 3);
+  };
+
+  const handleMakeAppointment = (psychologist) => {
+    setSelectedPsychologist(psychologist);
   };
 
   return (
@@ -125,12 +131,19 @@ const PsychologistCard = ({ psychologists }) => {
                     </li>
                   ))}
                 </UlReview>
-                <ButtonMakeAppoint>Make an appointment</ButtonMakeAppoint>
+                <ButtonMakeAppoint
+                  onClick={() => handleMakeAppointment(psychologist)}
+                >
+                  Make an appointment
+                </ButtonMakeAppoint>
               </DescriptionWrap>
             )}
           </DescriptionWrap>
         </DivCardPsy>
       ))}
+      {selectedPsychologist && (
+        <ModalAppointment psychologist={selectedPsychologist} />
+      )}
       {psychologists.length > loadMoreCount && (
         <button type="button" onClick={loadMore}>
           Load more

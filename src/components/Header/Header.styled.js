@@ -46,6 +46,7 @@ export const ButtonLog = styled.button`
         &:focus,
         &:active {
             background: var(--hover-color);
+            color: var(--white-color);
         }
 `
 
