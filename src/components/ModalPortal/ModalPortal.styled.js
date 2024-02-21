@@ -80,9 +80,6 @@ export const CloseButtonStyled = styled.button`
   right: 20px;
   &:hover {
     transform: scale(1.3);
-    > svg {
-      filter: drop-shadow(0 0 2px var(--green-color));
-    }
   }
 `;
 

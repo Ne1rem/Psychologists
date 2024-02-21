@@ -42,7 +42,7 @@ const PsychologistCard = ({ psychologists }) => {
     setLoadMoreCount(prevCount => prevCount + 3);
   };
 
-  const handleMakeAppointment = (psychologist) => {
+  const handleMakeAppointment = psychologist => {
     setSelectedPsychologist(psychologist);
   };
 
@@ -142,7 +142,10 @@ const PsychologistCard = ({ psychologists }) => {
         </DivCardPsy>
       ))}
       {selectedPsychologist && (
-        <ModalAppointment psychologist={selectedPsychologist} />
+        <ModalAppointment
+          psychologist={selectedPsychologist}
+          closeModal={setSelectedPsychologist}
+        />
       )}
       {psychologists.length > loadMoreCount && (
         <button type="button" onClick={loadMore}>
