@@ -1,14 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import icons from '../../img/icons.svg';
 import 'react-time-picker/dist/TimePicker.css';
 import 'react-clock/dist/Clock.css';
 import TimePicker from 'react-time-picker';
-import { AvatarAppointment, CloseButtonStyledAppoint, ModalBackDrop, ModalWindow, RegisterButton, RegisterForm, RegisterInput, SvgCloseAp } from "./ModalAppointment.styled";
+import { AvatarAppointment, CloseButtonStyledAppoint, MakeAppointmentDivAvatar, MakeAppointmentDivAvatarYourPsy, MakeAppointmentDivAvatarYourPsyP1, MakeAppointmentDivAvatarYourPsyP2, MakeAppointmentDivNumberTime, MakeAppointmentH, MakeAppointmentP, ModalBackDrop, ModalWindow, RegisterButton, RegisterForm, RegisterInput, SvgCloseAp } from "./ModalAppointment.styled";
 
 const ModalAppointment = ({ psychologist, closeModal }) => {
 
     const [value, onChange] = useState('00:00');
 
+    useEffect(() => {
+        const handleKeyDown = event => {
+          if (event.code === 'Escape') {
+            closeModal();
+          }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+      }, [closeModal]);
+    
     const [formData, setFormData] = useState({
       name: '',
       number: '',
@@ -37,20 +47,22 @@ const ModalAppointment = ({ psychologist, closeModal }) => {
     };
   
     return (
-      <ModalBackDrop>
+      <ModalBackDrop >
         <ModalWindow>
           <CloseButtonStyledAppoint type="button" onClick={() => closeModal(null)}>
             <SvgCloseAp>
               <use href={`${icons}#icon-exit`}></use>
             </SvgCloseAp>
           </CloseButtonStyledAppoint>
-          <h1>Make an appointment with a psychologist</h1>
-          <p>You are on the verge of changing your life for the better. Fill out the short form below to book your personal appointment with a professional psychologist. We guarantee confidentiality and respect for your privacy.</p>
-          <div>
+          <MakeAppointmentH>Make an appointment with a psychologist</MakeAppointmentH>
+          <MakeAppointmentP>You are on the verge of changing your life for the better. Fill out the short form below to book your personal appointment with a professional psychologist. We guarantee confidentiality and respect for your privacy.</MakeAppointmentP>
+          <MakeAppointmentDivAvatar>
             <AvatarAppointment src={psychologist.avatar_url} alt="avatar psychologist" />
-            <p>Your psychologist</p>
-            <p>{psychologist.name}</p>
-          </div>
+            <MakeAppointmentDivAvatarYourPsy>
+            <MakeAppointmentDivAvatarYourPsyP1>Your psychologist</MakeAppointmentDivAvatarYourPsyP1>
+            <MakeAppointmentDivAvatarYourPsyP2>{psychologist.name}</MakeAppointmentDivAvatarYourPsyP2>
+            </MakeAppointmentDivAvatarYourPsy>
+          </MakeAppointmentDivAvatar>
           <RegisterForm onSubmit={handleSubmit}>
             <RegisterInput
               placeholder="Name"
@@ -59,7 +71,7 @@ const ModalAppointment = ({ psychologist, closeModal }) => {
               value={formData.name}
               onChange={handleChange}
             />
-            <div style={{ display: 'flex' }}>
+            <MakeAppointmentDivNumberTime>
               <RegisterInput
                 placeholder="+380"
                 type="number"
@@ -68,7 +80,7 @@ const ModalAppointment = ({ psychologist, closeModal }) => {
                 onChange={handleChange}
               />
               <TimePicker onChange={onChange} value={value} />
-            </div>
+            </MakeAppointmentDivNumberTime>
             <RegisterInput
               placeholder="Email"
               type="email"
@@ -82,6 +94,7 @@ const ModalAppointment = ({ psychologist, closeModal }) => {
               name="comment"
               value={formData.comment}
               onChange={handleChange}
+              style={{height: `116px`}}
             />
             <RegisterButton type="submit">
               Send

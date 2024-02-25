@@ -6,7 +6,7 @@ const Navigation = () => {
     <NavigationWrap>
         <NavigationLink to='/'>Home</NavigationLink>
         <NavigationLink to='/psychologists'>Psychologists</NavigationLink>
-        {/* <NavigationLink to='/favorites'>Favorites</NavigationLink> */}
+        <NavigationLink to='/favorites'>Favorites</NavigationLink>
     </NavigationWrap>
   )
 }

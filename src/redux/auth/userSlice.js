@@ -4,7 +4,7 @@ const initialState = {
     email: null,
     id: null,
     token: null,
-    // isLoggedIn: false,
+    isLoggedIn: false,
     // isRefreshing: false,
   };
   
@@ -16,11 +16,14 @@ const initialState = {
             state.email = action.payload.email;
             state.id = action.payload.id;
             state.token = action.payload.token;
+            state.isLoggedIn = true;
         },
         removeUser(state) {
             state.email = null;
             state.token = null;
             state.id = null;
+            state.isLoggedIn = false;
+            
         },
     }
   });

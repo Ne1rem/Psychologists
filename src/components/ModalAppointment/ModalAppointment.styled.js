@@ -25,7 +25,7 @@ export const ModalBackDrop = styled.div`
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.2);
-  z-index: 1200;
+  z-index: 5;
   overflow: scroll;
 `
 export const AvatarAppointment = styled.img`
@@ -46,6 +46,7 @@ export const ModalWindow = styled.div`
   border-radius: 30px;
   background-color: #ffffff;
   box-sizing: border-box;
+z-index: 6;
 
   @media (max-width: 768px) {
     padding: 44px 24px;
@@ -56,20 +57,40 @@ export const RegisterForm = styled.form`
   margin-top: 40px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 `
 
 export const RegisterInput = styled.input`
   border: 1px solid rgba(25, 26, 21, 0.1);
   border-radius: 12px;
   padding: 16px 18px 16px 18px;
+  
 `
+export const MakeAppointmentH = styled.h1 `
+font-size: 40px;
+font-weight: 500;
+line-height: 48px;
+letter-spacing: -0.02em;
+padding-bottom: 20px;
+`
+export const MakeAppointmentP = styled.p `
+font-size: 16px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0em;
+color: rgba(25, 26, 21, 0.5);
+padding-bottom: 40px;
+`
+export const MakeAppointmentDivAvatar = styled.div `
+display: flex;
+gap: 14px;
+
+`
+
 
 export const RegisterButton = styled.button `
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 64px;
+  margin-top: 40px;
   justify-content: center;
   border: 1px solid;
   border-radius: 30px;
@@ -78,8 +99,38 @@ export const RegisterButton = styled.button `
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-  background-color: #fc832c;
+  background-color: var(--green-color);
   color: #fbfbfb;
   cursor: pointer;
   transition: 0.3s;
 `
+
+export const MakeAppointmentDivAvatarYourPsy = styled.div `
+display: flex;
+flex-direction:column ;
+gap:4px;
+`
+
+export const MakeAppointmentDivAvatarYourPsyP1 = styled.p `
+font-size: 12px;
+font-weight: 500;
+line-height: 16px;
+letter-spacing: 0em;
+color: rgba(138, 138, 137, 1);
+`
+
+export const MakeAppointmentDivAvatarYourPsyP2 = styled.p `
+
+font-size: 16px;
+font-weight: 500;
+line-height: 24px;
+letter-spacing: 0em;
+color: rgba(25, 26, 21, 1);
+
+`
+
+export const MakeAppointmentDivNumberTime = styled.div `
+display: flex;
+gap : 8px;
+`
+

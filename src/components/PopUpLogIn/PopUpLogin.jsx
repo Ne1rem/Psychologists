@@ -48,6 +48,7 @@ const PopUpLogIn = ({ onClose }) => {
         .catch(console.error);
     onClose();
   };
+  
   const togglePasswordVisibility = field => {
     if (field === 'password') {
       setShowPassword(!showPassword);
