@@ -28,14 +28,47 @@ import {
 } from './PsychologistCard.styled';
 import icons from '../../img/icons.svg';
 import ModalAppointment from 'components/ModalAppointment/ModalAppointment';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  selectIsLoggedIn,
+  selectFavorites,
+} from '../../redux/auth/selectors.js';
+import { Notify } from 'notiflix';
+import { addFav, deleteFav } from '../../redux/auth/userSlice.js';
 
 const PsychologistCard = ({ psychologists }) => {
+  const dispatch = useDispatch();
+
   const [loadMoreCount, setLoadMoreCount] = useState(3);
   const [expandedId, setExpandedId] = useState(null);
   const [selectedPsychologist, setSelectedPsychologist] = useState(null);
 
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const favorites = useSelector(selectFavorites);
+
   const handleReadMore = id => {
-    setExpandedId(id === expandedId ? null : id);
+    setExpandedId(expandedId === id ? null : id);
+  };
+
+  const addToFavorite = psychologist => {
+    const isFavorite = favorites.some(
+      favorite => favorite.name === psychologist.name
+    );
+
+    if (!isLoggedIn) {
+      Notify.failure('User is not logged in');
+      return;
+    }
+
+    if (!isFavorite) {
+      dispatch(addFav(psychologist));
+    } else {
+      dispatch(deleteFav(psychologist));
+    }
+  };
+
+  const removeFromFavorite = psychologist => {
+    dispatch(deleteFav(psychologist));
   };
 
   const loadMore = () => {
@@ -76,7 +109,18 @@ const PsychologistCard = ({ psychologists }) => {
                   </RatingPriceTextSpan>{' '}
                 </RatingPriceText>
               </RatingPriceBlock>
-              <SvgHeart>
+              <SvgHeart
+                onClick={() =>
+                  favorites.some(
+                    favorite => favorite.name === psychologist.name
+                  )
+                    ? removeFromFavorite(psychologist)
+                    : addToFavorite(psychologist)
+                }
+                favorite={favorites.some(
+                  favorite => favorite.name === psychologist.name
+                )}
+              >
                 <use href={`${icons}#icon-heart`}></use>
               </SvgHeart>
             </HeadDescriptionWrap>

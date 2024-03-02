@@ -84,12 +84,16 @@ export const SvgStar = styled.svg`
     height: 16px;
     margin-right: 8px;
 `
+
+
 export const SvgHeart = styled.svg`
     width: 26px;
     height: 26px;
-    fill: none;
-    stroke: rgb(25, 26, 21);
-`
+    stroke: ${props => props.favorite ? '#3470FF' : 'rgb(25, 26, 21)'};
+    fill: ${props => props.favorite ? '#3470FF' : 'none'};
+`;
+
+
 export const PsychologistName = styled.p`
     font-size: 24px;
     font-weight: 500;
