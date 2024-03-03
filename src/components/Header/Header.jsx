@@ -2,7 +2,16 @@ import React, { useState } from 'react';
 
 import { Container } from '../Container.styled';
 import Navigation from '../Navigation/Navigation';
-import { ButtonLog, ButtonReg, HeaderContainer, HeaderWrap, Logo, LogoDotSpan, LogoSpan, UserMenu } from './Header.styled';
+import {
+  ButtonLog,
+  ButtonReg,
+  HeaderContainer,
+  HeaderWrap,
+  Logo,
+  LogoDotSpan,
+  LogoSpan,
+  UserMenu,
+} from './Header.styled';
 import { ModalPortal } from '../ModalPortal/ModalPortal';
 import PopUpRegistration from '../PopUpRegistration/PopUpRegistration';
 import PopUpLogIn from '../PopUpLogIn/PopUpLogin';
@@ -29,29 +38,38 @@ const Header = () => {
     <HeaderWrap>
       <Container>
         <HeaderContainer>
-        <Logo>
-          <LogoSpan>psychologists</LogoSpan>
-          <LogoDotSpan>.</LogoDotSpan>services
-        </Logo>
-        <Navigation />
-        { isAuth ? 
-          <UserMenu>
-            <ButtonLog type="button" onClick={() => onClickBtn('Log In')}>Log In</ButtonLog>
-            <ButtonReg type="button" onClick={() => onClickBtn('Registration')}>Registration</ButtonReg>
-          </UserMenu> :
-            <ButtonLog type="button" onClick={() => dispatch(removeUser())}>Log Out</ButtonLog>
-        }
-
-        {isOpen && (
-        <ModalPortal title={title} onClose={toggleModal}>
-          {title === 'Log In' ? (
-            <PopUpLogIn onClose={toggleModal}/>
+          <Logo to={'/'}>
+            <LogoSpan>psychologists</LogoSpan>
+            <LogoDotSpan>.</LogoDotSpan>services
+          </Logo>
+          <Navigation />
+          {isAuth ? (
+            <UserMenu>
+              <ButtonLog type="button" onClick={() => onClickBtn('Log In')}>
+                Log In
+              </ButtonLog>
+              <ButtonReg
+                type="button"
+                onClick={() => onClickBtn('Registration')}
+              >
+                Registration
+              </ButtonReg>
+            </UserMenu>
           ) : (
-            <PopUpRegistration onClose={toggleModal}/>
+            <ButtonLog type="button" onClick={() => dispatch(removeUser())}>
+              Log Out
+            </ButtonLog>
           )}
 
-        </ModalPortal>
-      )}
+          {isOpen && (
+            <ModalPortal title={title} onClose={toggleModal}>
+              {title === 'Log In' ? (
+                <PopUpLogIn onClose={toggleModal} />
+              ) : (
+                <PopUpRegistration onClose={toggleModal} />
+              )}
+            </ModalPortal>
+          )}
         </HeaderContainer>
       </Container>
     </HeaderWrap>

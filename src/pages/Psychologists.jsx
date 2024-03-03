@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Container } from '../components/Container.styled';
+import { Container, Label, LabelDiv, LabelSelect, LabelSelectOp } from '../components/Container.styled';
 import PsychologistCard from '../components/Psychologist/PsychologistCard';
 import { getDatabase, ref, onValue } from 'firebase/database';
 
@@ -21,7 +21,6 @@ const Psychologists = () => {
 
   const handleFilterChange = ({ target: { value } }) => {
     let newList = [...initialPsychologists];
-
     if (value === 'AToZ') {
       newList.sort((a, b) => a.name.localeCompare(b.name));
     } else if (value === 'ZToA') {
@@ -35,23 +34,38 @@ const Psychologists = () => {
     } else if (value === 'NotPopular') {
       newList.sort((a, b) => a.rating - b.rating);
     }
-    
     setFilteredPsychologists(newList);
   };
 
   return (
     <Container>
-      <label htmlFor="filters">Filters</label>
-      <select name="filters" id="filters" onChange={handleFilterChange}>
-        <option key="ShowAll" value="ShowAll">Show all</option>
-        <option key="AToZ" value="AToZ">A to Z</option>
-        <option key="ZToA" value="ZToA">Z to A</option>
-        <option key="LessThan10" value="LessThan10">Less than 10$</option>
-        <option key="GreaterThan10" value="GreaterThan10">Greater than 10$</option>
-        <option key="Popular" value="Popular">Popular</option>
-        <option key="NotPopular" value="NotPopular">Not popular</option>
-      </select>
+          <LabelDiv>
+            <Label htmlFor="filters">Filters</Label>
+            <LabelSelect name="filters" id="filters" onChange={handleFilterChange}>
+              <LabelSelectOp key="ShowAll" value="ShowAll">
+                Show all
+              </LabelSelectOp>
+              <LabelSelectOp key="AToZ" value="AToZ">
+                A to Z
+              </LabelSelectOp>
+              <LabelSelectOp key="ZToA" value="ZToA">
+                Z to A
+              </LabelSelectOp>
+              <LabelSelectOp key="LessThan10" value="LessThan10">
+                Less than 10$
+              </LabelSelectOp>
+              <LabelSelectOp key="GreaterThan10" value="GreaterThan10">
+                Greater than 10$
+              </LabelSelectOp>
+              <LabelSelectOp key="Popular" value="Popular">
+                Popular
+              </LabelSelectOp>
+              <LabelSelectOp key="NotPopular" value="NotPopular">
+                Not popular
+              </LabelSelectOp>
+            </LabelSelect>
       <PsychologistCard psychologists={filteredPsychologists} />
+      </LabelDiv>
     </Container>
   );
 };

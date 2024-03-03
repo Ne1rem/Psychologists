@@ -41,7 +41,6 @@ const PopUpRegistration = ({ onClose }) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, values.email, values.password)
         .then(({user}) => {
-            console.log(user)
             dispatch(setUser({
                 email: user.email,
                 token: user.accessToken,

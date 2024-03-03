@@ -2,10 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   email: null,
+  password: null,
   id: null,
   token: null,
   isLoggedIn: false,
-  favourites: [],
 };
 
 const userSlice = createSlice({
@@ -23,14 +23,6 @@ const userSlice = createSlice({
       state.token = null;
       state.id = null;
       state.isLoggedIn = false;
-    },
-    addFav(state, action) {
-      state.favourites.push(action.payload);
-    },
-    deleteFav(state, action) {
-      state.favourites = state.favourites.filter(
-        favourite => favourite.name !== action.payload.name
-      );
     },
   },
 });

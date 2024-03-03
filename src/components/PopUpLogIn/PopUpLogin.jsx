@@ -38,7 +38,6 @@ const PopUpLogIn = ({ onClose }) => {
     const auth = getAuth();
     signInWithEmailAndPassword(auth, values.email, values.password)
         .then(({user}) => {
-            console.log(user)
             dispatch(setUser({
                 email: user.email,
                 token: user.accessToken,

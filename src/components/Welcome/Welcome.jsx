@@ -45,7 +45,6 @@ return (
       </LeftPartWelcome>
       <RightPartWelcome>
         <WelcomeImg src={mainImg} alt="main_img" /> 
-        {/* Не забути зробити оптимізацію картинки */}
         <QuestionBlock>
           <SvgQuestion>
             <use href={`${icons}#icon-question`}></use>

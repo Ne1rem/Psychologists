@@ -10,14 +10,14 @@ const ModalAppointment = ({ psychologist, closeModal }) => {
     const [value, onChange] = useState('00:00');
 
     useEffect(() => {
-        const handleKeyDown = event => {
-          if (event.code === 'Escape') {
-            closeModal();
-          }
-        };
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-      }, [closeModal]);
+      const handleKeyDown = event => {
+        if (event.code === 'Escape') {
+          closeModal();
+        }
+      };
+      window.addEventListener('keydown', handleKeyDown);
+      return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [closeModal]);
     
     const [formData, setFormData] = useState({
       name: '',
@@ -28,7 +28,6 @@ const ModalAppointment = ({ psychologist, closeModal }) => {
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      console.log('Form submitted:', formData);
       setFormData({
         name: '',
         number: '',
@@ -45,10 +44,14 @@ const ModalAppointment = ({ psychologist, closeModal }) => {
         [name]: value
       });
     };
+
+    const handleModalClick = (event) => {
+      event.stopPropagation(); 
+    };
   
     return (
-      <ModalBackDrop >
-        <ModalWindow>
+      <ModalBackDrop onClick={() => closeModal()}>
+        <ModalWindow onClick={handleModalClick}>
           <CloseButtonStyledAppoint type="button" onClick={() => closeModal(null)}>
             <SvgCloseAp>
               <use href={`${icons}#icon-exit`}></use>

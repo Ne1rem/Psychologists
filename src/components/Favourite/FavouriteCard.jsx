@@ -27,12 +27,12 @@ import {
   SvgImageAvatar,
   SvgStar,
   UlReview,
-} from './PsychologistCard.styled';
+} from './Favourite.styled';
 import icons from '../../img/icons.svg';
 import ModalAppointment from '../ModalAppointment/ModalAppointment'; // Adjust import path
 import { selectIsLoggedIn } from '../../redux/auth/selectors.js';
 
-const PsychologistCard = ({ psychologists }) => {
+const FavouritesCard = ({ filteredPsychologists }) => {
   const [loadMoreCount, setLoadMoreCount] = useState(3);
   const [expandedId, setExpandedId] = useState(null);
   const [selectedPsychologist, setSelectedPsychologist] = useState(null);
@@ -41,7 +41,6 @@ const PsychologistCard = ({ psychologists }) => {
   );
 
   const isLoggedIn = useSelector(selectIsLoggedIn);
-
   const handleReadMore = id => {
     setExpandedId(expandedId === id ? null : id);
   };
@@ -81,10 +80,10 @@ const PsychologistCard = ({ psychologists }) => {
 
   return (
     <PsycWrap>
-      {psychologists.slice(0, loadMoreCount).map(psychologist => (
+      {filteredPsychologists.slice(0, loadMoreCount).map(favoritePsychologist => (
         <DivCardPsy
-          key={psychologist.name}
-          className={expandedId === psychologist.name ? 'active' : ''}
+          key={favoritePsychologist.name}
+          className={expandedId === favoritePsychologist.name ? 'active' : ''}
         >
           <SvgImageAvatar
             viewBox="0 0 14 14"
@@ -93,7 +92,7 @@ const PsychologistCard = ({ psychologists }) => {
             <circle cx="7" cy="7" r="7" fill="#FBFBFB" />
             <circle cx="7.00065" cy="7.00009" r="4.66667" fillRule="#38CD3E" />
           </SvgImageAvatar>
-          <AvatarWrap src={psychologist.avatar_url} alt="avatar psychologist" />
+          <AvatarWrap src={favoritePsychologist.avatar_url} alt="avatar psychologist" />
           <DescriptionWrap>
             <HeadDescriptionWrap>
               <PsyText>Psychologist</PsyText>
@@ -101,11 +100,11 @@ const PsychologistCard = ({ psychologists }) => {
                 <SvgStar>
                   <use href={`${icons}#icon-star`}></use>
                 </SvgStar>
-                <RatingPriceText>Rating: {psychologist.rating}</RatingPriceText>
+                <RatingPriceText>Rating: {favoritePsychologist.rating}</RatingPriceText>
                 <RatingPriceText>
                   Price / 1 hour:{' '}
                   <RatingPriceTextSpan>
-                    {psychologist.price_per_hour}$
+                    {favoritePsychologist.price_per_hour}$
                   </RatingPriceTextSpan>{' '}
                 </RatingPriceText>
               </RatingPriceBlock>
@@ -113,52 +112,52 @@ const PsychologistCard = ({ psychologists }) => {
                 onClick={() =>
                   isLoggedIn
                     ? favoritePsychologists.some(
-                        favorite => favorite.name === psychologist.name
+                        favorite => favorite.name === favoritePsychologist.name
                       )
-                      ? removeFromFavorite(psychologist)
-                      : addToFavorite(psychologist)
+                      ? removeFromFavorite(favoritePsychologist)
+                      : addToFavorite(favoritePsychologist)
                     : Notify.failure('User is not logged in')
                 }
                 favorite={
                   isLoggedIn &&
                   favoritePsychologists.some(
-                    favorite => favorite.name === psychologist.name
+                    favorite => favorite.name === favoritePsychologist.name
                   )
                 }
               >
                 <use href={`${icons}#icon-heart`}></use>
               </SvgHeart>
             </HeadDescriptionWrap>
-            <PsychologistName>{psychologist.name}</PsychologistName>
+            <PsychologistName>{favoritePsychologist.name}</PsychologistName>
             <SkillsBlock>
               <SkillsBlockText>
-                <SkillsSpan>Experience: </SkillsSpan> {psychologist.experience}{' '}
+                <SkillsSpan>Experience: </SkillsSpan> {favoritePsychologist.experience}{' '}
                 years
               </SkillsBlockText>
               <SkillsBlockText>
-                <SkillsSpan>License: </SkillsSpan> {psychologist.license}
+                <SkillsSpan>License: </SkillsSpan> {favoritePsychologist.license}
               </SkillsBlockText>
               <SkillsBlockText>
                 <SkillsSpan>Specialization: </SkillsSpan>{' '}
-                {psychologist.specialization}
+                {favoritePsychologist.specialization}
               </SkillsBlockText>
               <SkillsBlockText>
                 <SkillsSpan>Initial consultation: </SkillsSpan>{' '}
-                {psychologist.initial_consultation}
+                {favoritePsychologist.initial_consultation}
               </SkillsBlockText>
             </SkillsBlock>
-            <DescriptionText>{psychologist.about}</DescriptionText>
+            <DescriptionText>{favoritePsychologist.about}</DescriptionText>
             <ButtonReadMore
               type="button"
-              onClick={() => handleReadMore(psychologist.name)}
-              id={psychologist.name}
+              onClick={() => handleReadMore(favoritePsychologist.name)}
+              id={favoritePsychologist.name}
             >
-              {expandedId !== psychologist.name ? 'Read More' : null}
+              {expandedId !== favoritePsychologist.name ? 'Read More' : null}
             </ButtonReadMore>
-            {expandedId === psychologist.name && (
+            {expandedId === favoritePsychologist.name && (
               <DescriptionWrap>
                 <UlReview>
-                  {psychologist.reviews.map((review, index) => (
+                  {favoritePsychologist.reviews.map((review, index) => (
                     <li key={index} className="card_reviews">
                       <div>
                         <ReviewDiv>
@@ -181,7 +180,7 @@ const PsychologistCard = ({ psychologists }) => {
                   ))}
                 </UlReview>
                 <ButtonMakeAppoint
-                  onClick={() => handleMakeAppointment(psychologist)}
+                  onClick={() => handleMakeAppointment(favoritePsychologist)}
                 >
                   Make an appointment
                 </ButtonMakeAppoint>
@@ -196,7 +195,7 @@ const PsychologistCard = ({ psychologists }) => {
           closeModal={setSelectedPsychologist}
         />
       )}
-      {psychologists.length > loadMoreCount && (
+      {filteredPsychologists.length > loadMoreCount && (
         <button type="button" onClick={loadMore}>
           Load more
         </button>
@@ -205,4 +204,4 @@ const PsychologistCard = ({ psychologists }) => {
   );
 };
 
-export default PsychologistCard;
+export default FavouritesCard;

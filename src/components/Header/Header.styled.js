@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const HeaderWrap = styled.header`
@@ -11,7 +12,7 @@ export const HeaderContainer = styled.header`
     align-items: center;
 `
 
-export const Logo = styled.p`
+export const Logo = styled(Link)`
     font-size: 20px;
     font-weight: 600;
     line-height: 24px;
