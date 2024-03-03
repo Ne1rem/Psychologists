@@ -1,14 +1,7 @@
 {
   "files": {
-    "main.css": "/psychologists/static/css/main.b02a8523.css",
-    "main.js": "/psychologists/static/js/main.df417afb.js",
-    "static/js/550.73717937.chunk.js": "/psychologists/static/js/550.73717937.chunk.js",
-    "static/css/457.30a35efd.chunk.css": "/psychologists/static/css/457.30a35efd.chunk.css",
-    "static/js/457.63e8aadc.chunk.js": "/psychologists/static/js/457.63e8aadc.chunk.js",
-    "static/css/754.30a35efd.chunk.css": "/psychologists/static/css/754.30a35efd.chunk.css",
-    "static/js/754.6e7cd033.chunk.js": "/psychologists/static/js/754.6e7cd033.chunk.js",
-    "static/js/930.869fb847.chunk.js": "/psychologists/static/js/930.869fb847.chunk.js",
-    "static/js/523.c18e446e.chunk.js": "/psychologists/static/js/523.c18e446e.chunk.js",
+    "main.css": "/psychologists/static/css/main.d8b9d3a1.css",
+    "main.js": "/psychologists/static/js/main.eec566bd.js",
     "static/media/Inter-Bold.ttf": "/psychologists/static/media/Inter-Bold.0eaf807b1cf0eceabe0f.ttf",
     "static/media/Inter-SemiBold.ttf": "/psychologists/static/media/Inter-SemiBold.6058d3da655fb35169c2.ttf",
     "static/media/Inter-Medium.ttf": "/psychologists/static/media/Inter-Medium.3f7acfe50aad7ad68548.ttf",
@@ -16,18 +9,11 @@
     "static/media/main_img.jpg": "/psychologists/static/media/main_img.2a32df9e958cb310e000.jpg",
     "static/media/icons.svg": "/psychologists/static/media/icons.097174130844282b536a9c167c63806c.svg",
     "index.html": "/psychologists/index.html",
-    "main.b02a8523.css.map": "/psychologists/static/css/main.b02a8523.css.map",
-    "main.df417afb.js.map": "/psychologists/static/js/main.df417afb.js.map",
-    "550.73717937.chunk.js.map": "/psychologists/static/js/550.73717937.chunk.js.map",
-    "457.30a35efd.chunk.css.map": "/psychologists/static/css/457.30a35efd.chunk.css.map",
-    "457.63e8aadc.chunk.js.map": "/psychologists/static/js/457.63e8aadc.chunk.js.map",
-    "754.30a35efd.chunk.css.map": "/psychologists/static/css/754.30a35efd.chunk.css.map",
-    "754.6e7cd033.chunk.js.map": "/psychologists/static/js/754.6e7cd033.chunk.js.map",
-    "930.869fb847.chunk.js.map": "/psychologists/static/js/930.869fb847.chunk.js.map",
-    "523.c18e446e.chunk.js.map": "/psychologists/static/js/523.c18e446e.chunk.js.map"
+    "main.d8b9d3a1.css.map": "/psychologists/static/css/main.d8b9d3a1.css.map",
+    "main.eec566bd.js.map": "/psychologists/static/js/main.eec566bd.js.map"
   },
   "entrypoints": [
-    "static/css/main.b02a8523.css",
-    "static/js/main.df417afb.js"
+    "static/css/main.d8b9d3a1.css",
+    "static/js/main.eec566bd.js"
   ]
 }
