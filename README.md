@@ -1,8 +1,9 @@
-Project Name
-Description
+Psychologists
+
+Description: 
 This project is a web application for connecting users with psychologists. It provides users with the ability to schedule appointments with psychologists, browse through a list of available psychologists, and manage their favorite psychologists.
 
-Features
+Features:
 User Authentication: Users can sign up, log in, and log out securely.
 Appointment Booking: Users can book appointments with psychologists.
 Psychologist Listings: Users can browse through a list of available psychologists.
