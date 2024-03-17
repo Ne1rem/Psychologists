@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/psychologists/static/css/main.d8b9d3a1.css",
-    "main.js": "/psychologists/static/js/main.eec566bd.js",
+    "main.js": "/psychologists/static/js/main.79694efd.js",
     "static/media/Inter-Bold.ttf": "/psychologists/static/media/Inter-Bold.0eaf807b1cf0eceabe0f.ttf",
     "static/media/Inter-SemiBold.ttf": "/psychologists/static/media/Inter-SemiBold.6058d3da655fb35169c2.ttf",
     "static/media/Inter-Medium.ttf": "/psychologists/static/media/Inter-Medium.3f7acfe50aad7ad68548.ttf",
@@ -10,10 +10,10 @@
     "static/media/icons.svg": "/psychologists/static/media/icons.097174130844282b536a9c167c63806c.svg",
     "index.html": "/psychologists/index.html",
     "main.d8b9d3a1.css.map": "/psychologists/static/css/main.d8b9d3a1.css.map",
-    "main.eec566bd.js.map": "/psychologists/static/js/main.eec566bd.js.map"
+    "main.79694efd.js.map": "/psychologists/static/js/main.79694efd.js.map"
   },
   "entrypoints": [
     "static/css/main.d8b9d3a1.css",
-    "static/js/main.eec566bd.js"
+    "static/js/main.79694efd.js"
   ]
 }
