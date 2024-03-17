@@ -7,6 +7,7 @@ import HomePage from 'pages/HomePage';
 import Psychologists from 'pages/Psychologists';
 import Favorites from 'pages/Favorites';
 import { FilterContex, Auth} from '../../src/auth'
+
 const App = () => {
   const [currentUser, setCurrentUser] = useState({
     name: '',

@@ -21,12 +21,42 @@ export const ModalBackDrop = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
+  background-color: rgba(25, 26, 21, 0.6);
+  padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: 5;
-  overflow: scroll;
+  z-index: 100;
+  overflow-y: hidden;
+
+  @media only screen and (min-width: 768px) {
+    padding-top: 40px;
+  }
+  @media only screen and (min-width: 1440px) {
+    align-items: center;
+  }
+
+  & div[name='scroll-container'] {
+    width: auto;
+    height: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    @media only screen and (min-width: 1440px) {
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #737272;
+      border-radius: 10px;
+    }
+  }
 `
 export const AvatarAppointment = styled.img`
 width: 44px;
