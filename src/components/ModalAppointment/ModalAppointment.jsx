@@ -4,6 +4,7 @@ import 'react-time-picker/dist/TimePicker.css';
 import 'react-clock/dist/Clock.css';
 import TimePicker from 'react-time-picker';
 import { AvatarAppointment, CloseButtonStyledAppoint, MakeAppointmentDivAvatar, MakeAppointmentDivAvatarYourPsy, MakeAppointmentDivAvatarYourPsyP1, MakeAppointmentDivAvatarYourPsyP2, MakeAppointmentDivNumberTime, MakeAppointmentH, MakeAppointmentP, ModalBackDrop, ModalWindow, RegisterButton, RegisterForm, RegisterInput, SvgCloseAp } from "./ModalAppointment.styled";
+import './ModalOpen.css'
 
 const ModalAppointment = ({ psychologist, closeModal }) => {
 
@@ -16,7 +17,11 @@ const ModalAppointment = ({ psychologist, closeModal }) => {
         }
       };
       window.addEventListener('keydown', handleKeyDown);
-      return () => window.removeEventListener('keydown', handleKeyDown);
+      document.body.classList.add('modal-open');
+      return () => {
+        window.removeEventListener('keydown', handleKeyDown);
+        document.body.classList.remove('modal-open');
+      };
     }, [closeModal]);
     
     const [formData, setFormData] = useState({

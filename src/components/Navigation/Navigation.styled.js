@@ -22,7 +22,7 @@ export const NavigationLink = styled(NavLink)`
         bottom: 0px;
         width: 8px;
         height: 8px;
-        background-color: var(--green-color);
+        background-color: var(--blue-color);
         border-radius: 50%;
         transform: translateX(-50%);
         opacity: 0;

@@ -31,6 +31,7 @@ import {
 import icons from '../../img/icons.svg';
 import ModalAppointment from '../ModalAppointment/ModalAppointment'; // Adjust import path
 import { selectIsLoggedIn } from '../../redux/auth/selectors.js';
+import { ButLoadMore } from 'components/Favourite/Favourite.styled';
 
 const PsychologistCard = ({ psychologists }) => {
   const [loadMoreCount, setLoadMoreCount] = useState(3);
@@ -197,9 +198,9 @@ const PsychologistCard = ({ psychologists }) => {
         />
       )}
       {psychologists.length > loadMoreCount && (
-        <button type="button" onClick={loadMore}>
+        <ButLoadMore type="button" onClick={loadMore}>
           Load more
-        </button>
+        </ButLoadMore>
       )}
     </PsycWrap>
   );

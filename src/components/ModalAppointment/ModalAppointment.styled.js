@@ -75,6 +75,7 @@ export const ModalWindow = styled.div`
   padding: 64px;
   border-radius: 30px;
   background-color: #ffffff;
+  overflow-y: auto;
   box-sizing: border-box;
 z-index: 6;
 
@@ -129,7 +130,7 @@ export const RegisterButton = styled.button `
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-  background-color: var(--green-color);
+  background-color: var(--blue-color);
   color: #fbfbfb;
   cursor: pointer;
   transition: 0.3s;

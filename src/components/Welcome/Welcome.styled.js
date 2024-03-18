@@ -20,7 +20,7 @@ export const MainTitle = styled.h1`
 `
 
 export const MainTitleSpan = styled.span`
-    color: var(--green-color);
+    color: var(--blue-color);
     font-style: italic;
 `
 export const WelcomeText = styled.p`
@@ -69,7 +69,7 @@ export const SvgUsers = styled.svg`
 export const SvgCheck = styled.svg`
     width: 30px;
     height: 30px;
-    fill: var(--green-color)
+    fill: var(--blue-color)
 `
 
 export const UsersBlock = styled.div`
@@ -88,7 +88,7 @@ export const UsersBlock = styled.div`
 
 export const PsyBlock = styled.div`
     border-radius: 20px;
-    background: var(--green-color);
+    background: var(--blue-color);
     width: 311px;
     height: 118px;
     position: absolute;
@@ -129,7 +129,7 @@ export const Button = styled(Link)`
     gap: 18px;
     padding: 18px 50px;
     border-radius: 30px;
-    background: var(--green-color);
+    background: var(--blue-color);
     justify-content: center;
     align-items: center;
     width: 246px;

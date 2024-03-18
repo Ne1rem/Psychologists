@@ -21,11 +21,11 @@ export const Logo = styled(Link)`
 `
 
 export const LogoSpan = styled.span`
-    color: var(--green-color);
+    color: var(--blue-color);
     font-weight: 700;
 `
 export const LogoDotSpan = styled.span`
-    color: var(--green-color);
+    color: var(--blue-color);
     font-weight: 500;
 `
 
@@ -56,7 +56,7 @@ export const ButtonReg = styled.button`
     gap: 18px;
     padding: 14px 40px;
     border-radius: 30px;
-    background: var(--green-color);
+    background: var(--blue-color);
     justify-content: center;
     align-items: center;
     width: 171px;

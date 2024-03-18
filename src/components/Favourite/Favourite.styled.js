@@ -77,7 +77,7 @@ export const RatingPriceText = styled.p`
     }
 `
 export const RatingPriceTextSpan = styled.span`
-    color: var(--green-color);
+    color: var(--blue-color);
 `
 export const SvgStar = styled.svg`
     width: 16px;
@@ -89,6 +89,7 @@ export const SvgStar = styled.svg`
 export const SvgHeart = styled.svg`
     width: 26px;
     height: 26px;
+    cursor: pointer;
     stroke: ${props => props.favorite ? '#3470FF' : 'rgb(25, 26, 21)'};
     fill: ${props => props.favorite ? '#3470FF' : 'none'};
 `;
@@ -149,7 +150,7 @@ text-decoration: underline;
 
 export const AvatarReviewIcon = styled.p`
 background: rgba(52, 112, 255, 0.2);
-color: (var(--green-color));
+color: (var(--blue-color));
 font-family: Inter;
 font-size: 20px;
 font-weight: 500;
@@ -198,7 +199,27 @@ padding-bottom: 40px;
 
 export const ButtonMakeAppoint = styled.button`
 border-radius: 30px;
-background: rgba(52, 112, 255, 1);
+background: var(--blue-color);
+color: #fff;
+font-weight: 500;
+line-height: 20px;
+letter-spacing: -0.01em;
+padding: 14px 32px;
+&:hover,
+    &:focus,
+    &:active {
+            background: var(--hover-color);
+            color: var(--white-color);
+        }
+`
+
+export const ButLoadMore = styled.button`
+border-radius: 30px;
+margin-bottom:40px;
+justify-content: center;
+align-self: center;
+max-width: 176px;
+background: var(--blue-color);
 color: #fff;
 font-weight: 500;
 line-height: 20px;

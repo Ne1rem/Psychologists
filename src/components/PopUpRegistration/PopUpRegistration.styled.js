@@ -59,7 +59,7 @@ export const Button = styled.button`
   font-weight: 500;
   line-height: 1.25;
   border-radius: 30px;
-  background: var(--green-color);
+  background: var(--blue-color);
   border: none;
   width: 100%;
   cursor: pointer;

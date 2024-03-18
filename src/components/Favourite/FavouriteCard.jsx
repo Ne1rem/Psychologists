@@ -4,6 +4,7 @@ import { Notify } from 'notiflix';
 import {
   AvatarReviewIcon,
   AvatarWrap,
+  ButLoadMore,
   ButtonMakeAppoint,
   ButtonReadMore,
   DescriptionText,
@@ -196,9 +197,9 @@ const FavouritesCard = ({ filteredPsychologists }) => {
         />
       )}
       {filteredPsychologists.length > loadMoreCount && (
-        <button type="button" onClick={loadMore}>
+        <ButLoadMore type="button" onClick={loadMore}>
           Load more
-        </button>
+        </ButLoadMore>
       )}
     </PsycWrap>
   );
