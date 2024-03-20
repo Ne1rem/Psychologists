@@ -33,7 +33,7 @@ import icons from '../../img/icons.svg';
 import ModalAppointment from '../ModalAppointment/ModalAppointment'; // Adjust import path
 import { selectIsLoggedIn } from '../../redux/auth/selectors.js';
 
-const FavouritesCard = ({ filteredPsychologists }) => {
+const FavouritesCard = ({ filteredPsychologists , setFilteredPsychologists}) => {
   const [loadMoreCount, setLoadMoreCount] = useState(3);
   const [expandedId, setExpandedId] = useState(null);
   const [selectedPsychologist, setSelectedPsychologist] = useState(null);
@@ -69,6 +69,11 @@ const FavouritesCard = ({ filteredPsychologists }) => {
     );
     setFavoritePsychologists(updatedFavorites);
     localStorage.setItem('favorite', JSON.stringify(updatedFavorites));
+    
+    setFilteredPsychologists(filteredPsychologists.filter(
+      favorite => favorite.name !== psychologist.name
+    ));
+    setFavoritePsychologists(JSON.parse(localStorage.getItem('favorite')) || [])
   };
 
   const loadMore = () => {

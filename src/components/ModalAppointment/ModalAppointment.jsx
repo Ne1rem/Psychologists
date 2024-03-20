@@ -6,7 +6,7 @@ import TimePicker from 'react-time-picker';
 import { AvatarAppointment, CloseButtonStyledAppoint, MakeAppointmentDivAvatar, MakeAppointmentDivAvatarYourPsy, MakeAppointmentDivAvatarYourPsyP1, MakeAppointmentDivAvatarYourPsyP2, MakeAppointmentDivNumberTime, MakeAppointmentH, MakeAppointmentP, ModalBackDrop, ModalWindow, RegisterButton, RegisterForm, RegisterInput, SvgCloseAp } from "./ModalAppointment.styled";
 import './ModalOpen.css'
 
-const ModalAppointment = ({ psychologist, closeModal }) => {
+const ModalAppointment = ({ psychologist, closeModal, setMakeAnAppointment, makeAnAppointment}) => {
 
     const [value, onChange] = useState('00:00');
 
@@ -39,6 +39,10 @@ const ModalAppointment = ({ psychologist, closeModal }) => {
         email: '',
         comment: ''
       });
+      const updatedAppointment = [...makeAnAppointment, formData];
+      setMakeAnAppointment(updatedAppointment);
+      localStorage.setItem('appointment', JSON.stringify(updatedAppointment));
+      console.log(makeAnAppointment);
       closeModal();
     };
   

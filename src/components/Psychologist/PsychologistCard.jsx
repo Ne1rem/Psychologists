@@ -41,6 +41,10 @@ const PsychologistCard = ({ psychologists }) => {
     JSON.parse(localStorage.getItem('favorite')) || []
   );
 
+  const [makeAnAppointment, setMakeAnAppointment] = useState(
+    JSON.parse(localStorage.getItem('appointment')) || []
+  );
+
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const handleReadMore = id => {
@@ -193,6 +197,8 @@ const PsychologistCard = ({ psychologists }) => {
       ))}
       {selectedPsychologist && (
         <ModalAppointment
+          makeAnAppointment={makeAnAppointment}
+          setMakeAnAppointment={setMakeAnAppointment}
           psychologist={selectedPsychologist}
           closeModal={setSelectedPsychologist}
         />
