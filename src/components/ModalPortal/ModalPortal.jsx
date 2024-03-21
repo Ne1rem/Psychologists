@@ -30,7 +30,7 @@ export const ModalPortal = ({ title, children, onClose }) => {
   };
 
   return createPortal(
-    <ModalWrapStyled onClick={handleClose}>
+    <ModalWrapStyled onMouseDown={handleClose}>
       <div name="scroll-container">
         <ModalWindowStyled>
           <CloseButtonStyled

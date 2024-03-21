@@ -76,7 +76,7 @@ const Favorites = () => {
                 Not popular
               </LabelSelectOp>
             </LabelSelect>
-            <FavouritesCard filteredPsychologists={filteredPsychologists} setFilteredPsychologists={setFilteredPsychologists} />
+            <FavouritesCard filteredPsychologists={filteredPsychologists} setFilteredPsychologists={setFilteredPsychologists} setPsychologists={setPsychologists} />
           </LabelDiv>
         ) 
       ) : (

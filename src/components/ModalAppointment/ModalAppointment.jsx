@@ -59,7 +59,7 @@ const ModalAppointment = ({ psychologist, closeModal, setMakeAnAppointment, make
     };
   
     return (
-      <ModalBackDrop onClick={() => closeModal()}>
+      <ModalBackDrop onMouseDown={() => closeModal()}>
         <ModalWindow onClick={handleModalClick}>
           <CloseButtonStyledAppoint type="button" onClick={() => closeModal(null)}>
             <SvgCloseAp>
