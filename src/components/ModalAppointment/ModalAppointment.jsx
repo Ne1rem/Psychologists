@@ -8,8 +8,6 @@ import './ModalOpen.css'
 
 const ModalAppointment = ({ psychologist, closeModal, setMakeAnAppointment, makeAnAppointment}) => {
 
-    const [value, onChange] = useState('00:00');
-
     useEffect(() => {
       const handleKeyDown = event => {
         if (event.code === 'Escape') {
@@ -28,7 +26,8 @@ const ModalAppointment = ({ psychologist, closeModal, setMakeAnAppointment, make
       name: '',
       number: '',
       email: '',
-      comment: ''
+      comment: '',
+      time: ''
     });
   
     const handleSubmit = (event) => {
@@ -37,7 +36,8 @@ const ModalAppointment = ({ psychologist, closeModal, setMakeAnAppointment, make
         name: '',
         number: '',
         email: '',
-        comment: ''
+        comment: '',
+        time: ''
       });
       const updatedAppointment = [...makeAnAppointment, formData];
       setMakeAnAppointment(updatedAppointment);
@@ -46,12 +46,20 @@ const ModalAppointment = ({ psychologist, closeModal, setMakeAnAppointment, make
       closeModal();
     };
   
-    const handleChange = (event) => {
-      const { name, value } = event.target;
+    const closeModalBack = (event) =>{
+      event.stopPropagation(); 
+      closeModal()
+    }
+    
+    const handleChange = (name, value) => {
       setFormData({
         ...formData,
         [name]: value
       });
+    };
+
+    const handleTimeChange = (time) => {
+      handleChange('time', time);
     };
 
     const handleModalClick = (event) => {
@@ -59,8 +67,8 @@ const ModalAppointment = ({ psychologist, closeModal, setMakeAnAppointment, make
     };
   
     return (
-      <ModalBackDrop onMouseDown={() => closeModal()}>
-        <ModalWindow onClick={handleModalClick}>
+      <ModalBackDrop onMouseDown={(event) => closeModalBack(event)}>
+        <ModalWindow onMouseDown={handleModalClick}>
           <CloseButtonStyledAppoint type="button" onClick={() => closeModal(null)}>
             <SvgCloseAp>
               <use href={`${icons}#icon-exit`}></use>
@@ -81,7 +89,7 @@ const ModalAppointment = ({ psychologist, closeModal, setMakeAnAppointment, make
               type="text"
               name="name"
               value={formData.name}
-              onChange={handleChange}
+              onChange={(e) => handleChange(e.target.name, e.target.value)}
             />
             <MakeAppointmentDivNumberTime>
               <RegisterInput
@@ -89,23 +97,23 @@ const ModalAppointment = ({ psychologist, closeModal, setMakeAnAppointment, make
                 type="number"
                 name="number"
                 value={formData.number}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e.target.name, e.target.value)}
               />
-              <TimePicker onChange={onChange} value={value} />
+              <TimePicker onChange={handleTimeChange} value={formData.time} />
             </MakeAppointmentDivNumberTime>
             <RegisterInput
               placeholder="Email"
               type="email"
               name="email"
               value={formData.email}
-              onChange={handleChange}
+              onChange={(e) => handleChange(e.target.name, e.target.value)}
             />
             <RegisterInput
               placeholder="Comment"
               type="text"
               name="comment"
               value={formData.comment}
-              onChange={handleChange}
+              onChange={(e) => handleChange(e.target.name, e.target.value)}
               style={{height: `116px`}}
             />
             <RegisterButton type="submit">
