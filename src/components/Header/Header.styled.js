@@ -10,6 +10,12 @@ export const HeaderContainer = styled.header`
     display: flex;
     padding: 30px 0;
     align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    @media only screen and (min-width: 768px) {
+    flex-direction: row;
+
+  }
 `
 
 export const Logo = styled(Link)`
@@ -17,7 +23,10 @@ export const Logo = styled(Link)`
     font-weight: 600;
     line-height: 24px;
     letter-spacing: -0.4px;
+    margin-right: none;
+    @media only screen and (min-width: 768px) {
     margin-right: 130px;
+  }
 `
 
 export const LogoSpan = styled.span`

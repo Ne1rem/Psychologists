@@ -5,10 +5,16 @@ export const WelcomeWrap = styled.div`
     display: flex;
     gap: 125px;
     align-items: center;
+    flex-direction: column;
+    @media only screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 `
 
 export const LeftPartWelcome = styled.div`
+    @media only screen and (min-width: 768px) {
     width: 595px;
+  }
 `
 
 export const MainTitle = styled.h1`
@@ -17,6 +23,7 @@ export const MainTitle = styled.h1`
     line-height: 1.025;
     letter-spacing: -1.6px;
     margin-bottom: 20px;
+    
 `
 
 export const MainTitleSpan = styled.span`
@@ -29,7 +36,9 @@ export const WelcomeText = styled.p`
     line-height: 1.33;
     letter-spacing: -0.36px;
     margin-bottom: 40px;
+    @media only screen and (min-width: 768px) {
     width: 510px;
+  }
 `
 export const WelcomeImg = styled.img`
     width: 464px;

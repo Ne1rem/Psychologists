@@ -4,7 +4,10 @@ import { NavLink } from 'react-router-dom'
 export const NavigationWrap = styled.div`
     display: flex;
     gap: 40px;
+    margin-right: none;
+    @media only screen and (min-width: 768px) {
     margin-right: auto;
+  }
 `
 
 export const NavigationLink = styled(NavLink)`

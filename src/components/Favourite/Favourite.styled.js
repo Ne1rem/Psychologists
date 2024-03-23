@@ -11,7 +11,11 @@ export const DivCardPsy = styled.div`
     padding: 24px;
     width: 100%;
     display: flex;
-    `
+    flex-direction: column;
+    @media only screen and (min-width: 768px) {
+    flex-direction: row;
+  }
+`
 
 export const AvatarWrap = styled.img`
     width: 120px;

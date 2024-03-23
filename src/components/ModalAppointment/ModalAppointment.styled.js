@@ -69,6 +69,27 @@ export const SvgCloseAp = styled.svg`
     stroke: var(--black-color);
 `
 
+export const InputTime = styled.input`
+  width: 100%;
+  cursor: pointer;
+  height: 52px;
+  border-radius: 12px;
+  border: 1px solid ${({ theme }) => theme.colors.borderColor};
+  padding-left: 16px;
+  line-height: 1.25;
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.black};
+  }
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+  &:focus {
+    border: 1px solid rgba(25, 26, 21, 1);
+  }
+`;
+
+
 export const ModalWindow = styled.div`
   position: relative;
   width: 600px;
