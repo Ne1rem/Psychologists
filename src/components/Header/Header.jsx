@@ -17,15 +17,14 @@ import PopUpRegistration from '../PopUpRegistration/PopUpRegistration';
 import PopUpLogIn from '../PopUpLogIn/PopUpLogin';
 import { useAuth } from '../../helpers/hooks/useAuth';
 import { useDispatch } from 'react-redux';
-import { removeUser } from '../../redux/auth/userSlice';
-import { useNavigate } from 'react-router-dom';
+import { removeUser } from '../../redux/auth/userSlice';  
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [title, setIsTitle] = useState('Registration');
   const { isAuth } = useAuth();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+
 
   const toggleModal = () => {
     setIsOpen(isOpen => !isOpen);
@@ -38,7 +37,7 @@ const Header = () => {
   
   const logOutRemoveUser = () => {
     dispatch(removeUser())
-    navigate('/')
+
   }
 
   return (

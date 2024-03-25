@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Container, Label, LabelDiv, LabelSelect, LabelSelectOp, TitelNotLoggedIn } from '../components/Container.styled';
-import FavouritesCard from '../components/Favourite/FavouriteCard'; // Corrected import path
+import FavouritesCard from '../components/Favourite/FavouriteCard';
 import { useSelector } from 'react-redux';
-import { selectIsLoggedIn } from '../redux/auth/selectors'; // Corrected import path
+import { selectIsLoggedIn } from '../redux/auth/selectors';
+import { Navigate } from 'react-router-dom';
 
 const Favorites = () => {
   const [psychologists, setPsychologists] = useState([]);
@@ -45,42 +46,42 @@ const Favorites = () => {
     setFilteredPsychologists(newList);
   };
 
+  if (!isLoggedIn) {
+    return <Navigate to="/" />;
+  }
+
   return (
     <Container>
-      {isLoggedIn ? (
-        psychologists.length === 0 ? (
-          <TitelNotLoggedIn>Your favourite list is empty</TitelNotLoggedIn>
-        ): (
-          <LabelDiv>
-            <Label htmlFor="filters">Filters</Label>
-            <LabelSelect name="filters" id="filters" onChange={handleFilterChange}>
-              <LabelSelectOp key="ShowAll" value="ShowAll">
-                Show all
-              </LabelSelectOp>
-              <LabelSelectOp key="AToZ" value="AToZ">
-                A to Z
-              </LabelSelectOp>
-              <LabelSelectOp key="ZToA" value="ZToA">
-                Z to A
-              </LabelSelectOp>
-              <LabelSelectOp key="LessThan10" value="LessThan10">
-                Less than 10$
-              </LabelSelectOp>
-              <LabelSelectOp key="GreaterThan10" value="GreaterThan10">
-                Greater than 10$
-              </LabelSelectOp>
-              <LabelSelectOp key="Popular" value="Popular">
-                Popular
-              </LabelSelectOp>
-              <LabelSelectOp key="NotPopular" value="NotPopular">
-                Not popular
-              </LabelSelectOp>
-            </LabelSelect>
-            <FavouritesCard filteredPsychologists={filteredPsychologists} setFilteredPsychologists={setFilteredPsychologists} setPsychologists={setPsychologists} />
-          </LabelDiv>
-        ) 
-      ) : (
-        <TitelNotLoggedIn>You are not logged in</TitelNotLoggedIn>
+      {psychologists.length === 0 ? (
+        <TitelNotLoggedIn>Your favourite list is empty</TitelNotLoggedIn>
+      ): (
+        <LabelDiv>
+          <Label htmlFor="filters">Filters</Label>
+          <LabelSelect name="filters" id="filters" onChange={handleFilterChange}>
+            <LabelSelectOp key="ShowAll" value="ShowAll">
+              Show all
+            </LabelSelectOp>
+            <LabelSelectOp key="AToZ" value="AToZ">
+              A to Z
+            </LabelSelectOp>
+            <LabelSelectOp key="ZToA" value="ZToA">
+              Z to A
+            </LabelSelectOp>
+            <LabelSelectOp key="LessThan10" value="LessThan10">
+              Less than 10$
+            </LabelSelectOp>
+            <LabelSelectOp key="GreaterThan10" value="GreaterThan10">
+              Greater than 10$
+            </LabelSelectOp>
+            <LabelSelectOp key="Popular" value="Popular">
+              Popular
+            </LabelSelectOp>
+            <LabelSelectOp key="NotPopular" value="NotPopular">
+              Not popular
+            </LabelSelectOp>
+          </LabelSelect>
+          <FavouritesCard filteredPsychologists={filteredPsychologists} setFilteredPsychologists={setFilteredPsychologists} setPsychologists={setPsychologists} />
+        </LabelDiv>
       )}
     </Container>
   );
