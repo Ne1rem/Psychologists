@@ -14,6 +14,7 @@ import {
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../redux/auth/userSlice';
+import Notiflix from 'notiflix';
 
 export const validateSchema = Yup.object().shape({
   name: Yup.string().required('Required'),
@@ -43,8 +44,12 @@ const PopUpLogIn = ({ onClose }) => {
                 token: user.accessToken,
                 id: user.uid,
             }))
+            Notiflix.Notify.success('Welcome')
         })
-        .catch(console.error);
+        .catch(error => {
+          console.error(error);
+          Notiflix.Notify.failure('Email or password is not right');
+      });
     onClose();
   };
   

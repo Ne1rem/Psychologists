@@ -1,9 +1,7 @@
-import { useEffect, useState } from 'react';
-import icons from '../../img/icons.svg';
+import { useState } from 'react';
 import  { ThemeProvider } from 'styled-components';
 import {
   AvatarAppointment,
-  CloseButtonStyledAppoint,
   InputTime,
   MakeAppointmentDivAvatar,
   MakeAppointmentDivAvatarYourPsy,
@@ -12,12 +10,9 @@ import {
   MakeAppointmentDivNumberTime,
   MakeAppointmentH,
   MakeAppointmentP,
-  ModalBackDrop,
-  ModalWindow,
   RegisterButton,
   RegisterForm,
   RegisterInput,
-  SvgCloseAp,
 } from './ModalAppointment.styled';
 import './ModalOpen.css';
 
@@ -33,19 +28,6 @@ const ModalAppointment = ({
   setMakeAnAppointment,
   makeAnAppointment,
 }) => {
-  useEffect(() => {
-    const handleKeyDown = event => {
-      if (event.code === 'Escape') {
-        closeModal();
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    document.body.classList.add('modal-open');
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-      document.body.classList.remove('modal-open');
-    };
-  }, [closeModal]);
   
   const [formData, setFormData] = useState({
     name: '',
@@ -67,12 +49,6 @@ const ModalAppointment = ({
     const updatedAppointment = [...makeAnAppointment, formData];
     setMakeAnAppointment(updatedAppointment);
     localStorage.setItem('appointment', JSON.stringify(updatedAppointment));
-    console.log(makeAnAppointment);
-    closeModal();
-  };
-
-  const closeModalBack = event => {
-    event.stopPropagation();
     closeModal();
   };
 
@@ -87,22 +63,10 @@ const ModalAppointment = ({
     handleChange('time', time);
   };
 
-  const handleModalClick = event => {
-    event.stopPropagation();
-  };
 
   return (
+    <div>
     <ThemeProvider theme={theme}>
-      <ModalBackDrop onMouseDown={event => closeModalBack(event)}>
-        <ModalWindow onMouseDown={handleModalClick}>
-          <CloseButtonStyledAppoint
-            type="button"
-            onClick={() => closeModal(null)}
-          >
-            <SvgCloseAp>
-              <use href={`${icons}#icon-exit`}></use>
-            </SvgCloseAp>
-          </CloseButtonStyledAppoint>
           <MakeAppointmentH>
             Make an appointment with a psychologist
           </MakeAppointmentH>
@@ -166,9 +130,8 @@ const ModalAppointment = ({
             />
             <RegisterButton type="submit">Send</RegisterButton>
           </RegisterForm>
-        </ModalWindow>
-      </ModalBackDrop>
     </ThemeProvider>
+    </div>
   );
 };
 

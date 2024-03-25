@@ -98,7 +98,7 @@ export const ModalWindow = styled.div`
   background-color: #ffffff;
   overflow-y: auto;
   box-sizing: border-box;
-z-index: 6;
+  z-index: 6;
 
   @media (max-width: 768px) {
     padding: 44px 24px;

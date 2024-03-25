@@ -29,11 +29,13 @@ import {
   UlReview,
 } from './PsychologistCard.styled';
 import icons from '../../img/icons.svg';
-import ModalAppointment from '../ModalAppointment/ModalAppointment'; // Adjust import path
+import ModalAppointment from '../ModalAppointment/ModalAppointment';
 import { selectIsLoggedIn } from '../../redux/auth/selectors.js';
 import { ButLoadMore } from 'components/Favourite/Favourite.styled';
+import { ModalPortalAppointment } from 'components/ModalPortal/ModalPortalAppoinment';
 
 const PsychologistCard = ({ psychologists }) => {
+  const [isModalAppointmentOpen, setIsModalAppointmentOpen] = useState(false)
   const [loadMoreCount, setLoadMoreCount] = useState(3);
   const [expandedId, setExpandedId] = useState(null);
   const [selectedPsychologist, setSelectedPsychologist] = useState(null);
@@ -67,7 +69,9 @@ const PsychologistCard = ({ psychologists }) => {
       localStorage.setItem('favorite', JSON.stringify(updatedFavorites));
     }
   };
-
+  const closeModalAppointment = () => {
+    setIsModalAppointmentOpen(isModalAppointmentOpen => !isModalAppointmentOpen);
+  }
   const removeFromFavorite = psychologist => {
     const updatedFavorites = favoritePsychologists.filter(
       favorite => favorite.name !== psychologist.name
@@ -82,6 +86,7 @@ const PsychologistCard = ({ psychologists }) => {
 
   const handleMakeAppointment = psychologist => {
     setSelectedPsychologist(psychologist);
+    closeModalAppointment()
   };
 
   return (
@@ -195,13 +200,15 @@ const PsychologistCard = ({ psychologists }) => {
           </DescriptionWrap>
         </DivCardPsy>
       ))}
-      {selectedPsychologist && (
+      {isModalAppointmentOpen && (
+        <ModalPortalAppointment onClose={closeModalAppointment}>
         <ModalAppointment
           makeAnAppointment={makeAnAppointment}
           setMakeAnAppointment={setMakeAnAppointment}
           psychologist={selectedPsychologist}
-          closeModal={setSelectedPsychologist}
+          closeModal={closeModalAppointment}
         />
+        </ModalPortalAppointment>
       )}
       {psychologists.length > loadMoreCount && (
         <ButLoadMore type="button" onClick={loadMore}>
