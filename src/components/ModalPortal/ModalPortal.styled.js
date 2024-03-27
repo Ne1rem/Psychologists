@@ -44,7 +44,7 @@ export const ModalWrapStyled = styled.div`
 `;
 
 export const ModalWindowStyled = styled.div`
-  width: 280px;
+  width: 60%;
   margin: auto;
   height: auto;
   padding: 24px 12px;
