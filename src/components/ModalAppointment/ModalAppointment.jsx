@@ -15,6 +15,7 @@ import {
   RegisterInput,
 } from './ModalAppointment.styled';
 import './ModalOpen.css';
+import Notiflix from 'notiflix';
 
 const theme = {
   colors: {
@@ -62,6 +63,7 @@ const ModalAppointment = ({
       setMakeAnAppointment(updatedAppointment);
       localStorage.setItem('appointment', JSON.stringify(updatedAppointment));
       closeModal();
+      Notiflix.Notify.success('Waiting you on appointment'); // Display success message
     }
   };
 
